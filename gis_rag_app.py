@@ -364,7 +364,7 @@ if not api_key:
     """, unsafe_allow_html=True)
     st.stop()
 
-os.environ["GOOGLE_API_KEY"] = api_key
+os.environ["GOOGLE_API_KEY"] = api_key or st.secrets.get("GOOGLE_API_KEY", "")
 
 
 # ─────────────────────────────────────────────
